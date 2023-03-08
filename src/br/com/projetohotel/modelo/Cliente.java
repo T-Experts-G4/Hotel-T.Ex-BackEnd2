@@ -1,33 +1,56 @@
 package br.com.projetohotel.modelo;
 
-public class Cliente extends Usuario {
+public class Cliente {
 	private int clienteId;
 	private String endereco;
 	private String telefone;
 	private String email;
+	private int usuarioId;
 
-	public Cliente( String nome, String senha, String endereco, String telefone, String email) {
-		super(nome, senha);
+	public Cliente( String endereco, String telefone, String email, int usuarioId) {
+		
 		this.endereco = endereco;
+		this.telefone = telefone;
+		this.email = email;
+		this.usuarioId = usuarioId;
+	}
+	
+	public Cliente( String telefone, String email) {
+		
 		this.telefone = telefone;
 		this.email = email;
 	}
 	
-	public Cliente( String nome, String telefone, String email) {
-		super(nome);
+	public Cliente(String telefone, String email, int usuarioId) {
 		this.telefone = telefone;
 		this.email = email;
+		this.usuarioId = usuarioId;
 	}
 
 
-	public Cliente(int usuarioId, String nome, String senha, int clienteId, String endereco, String telefone,
+	public Cliente(int usuarioId, int clienteId, String endereco, String telefone,
 			String email) {
-		super(usuarioId, nome, senha);
 		this.clienteId = clienteId;
 		this.endereco = endereco;
 		this.telefone = telefone;
 		this.email = email;
 	}
+	
+	public Cliente( String endereco, String telefone, String email) {
+			
+			this.endereco = endereco;
+			this.telefone = telefone;
+			this.email = email;
+	}
+	
+	public Cliente( int clienteId, String telefone, String email) {
+		
+		this.clienteId = clienteId;
+		this.telefone = telefone;
+		this.email = email;
+	}
+	
+	
 
 	public int getClienteId() {
 		return clienteId;
@@ -57,14 +80,13 @@ public class Cliente extends Usuario {
 		this.email = email;
 	}
 
-	public String getSenha() {
-
-		return senha;
+		
+	public int getUsuarioId() {
+		return usuarioId;
 	}
 
-	public String getNome() {
-
-		return nome;
+	public void setUsuarioId(int usuarioId) {
+		this.usuarioId = usuarioId;
 	}
 
 	@Override
